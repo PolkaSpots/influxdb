@@ -2,8 +2,8 @@ FROM golang:1.6
 MAINTAINER Simon Morley | simon@cucumberwifi.io
 
 # Install InfluxDB
-ENV INFLUXDB_VERSION 0.12.1-1
-RUN curl -s -o /tmp/influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
+ENV INFLUXDB_VERSION 0.13.0
+RUN curl -s -o /tmp/influxdb_latest_amd64.deb https://dl.influxdata.com/influxdb/releases/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
   dpkg -i /tmp/influxdb_latest_amd64.deb && \
   rm /tmp/influxdb_latest_amd64.deb && \
   rm -rf /var/lib/apt/lists/*
